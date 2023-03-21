@@ -3,7 +3,7 @@ services:
   my_web:
     image: wolf0110/website
     volumes:
-      - ./:/var/www/html
+      - ./public:/var/www/html
     ports:
       - 80:80
     depends_on:
@@ -28,7 +28,7 @@ services:
     image: phpmyadmin:latest
     restart: always
     ports:
-      - 8081:80
+      - 81:80
     environment:
       PMA_PASSWORD: root
       PMA_HOST: mysql_db
