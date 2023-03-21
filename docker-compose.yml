@@ -1,0 +1,38 @@
+version: "3.1"
+services:
+  my_web:
+    image: wolf0110/website
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 80:80
+    depends_on:
+      - mysql_db
+      - phpmyadmin
+    links:
+      - mysql_db:mysql_db
+    environment:
+      TZ: Europe/Budapest
+
+  mysql_db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Europe/Budapest
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      PMA_PASSWORD: root
+      PMA_HOST: mysql_db
+      PMA_PORT: 3306
+      TZ: Europe/Budapest
+    links:
+      - mysql_db:mysql_db
