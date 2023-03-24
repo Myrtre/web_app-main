@@ -14,7 +14,6 @@ const vsSource = `
       v_texCoord = a_texcoord + u_frame;
     }
   `;
-
 // Fragment shader program
 const fsSource = `
     precision mediump float;
