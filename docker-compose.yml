@@ -13,6 +13,8 @@ services:
       - mysql_db:mysql_db
     environment:
       TZ: Europe/Budapest
+    networks:
+      - web
 
   mysql_db:
     image: mysql:latest
@@ -36,3 +38,6 @@ services:
       TZ: Europe/Budapest
     links:
       - mysql_db:mysql_db
+
+networks:
+  web:

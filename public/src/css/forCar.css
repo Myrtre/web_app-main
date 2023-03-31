@@ -1,0 +1,84 @@
+img{
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+}
+.car{
+    position: absolute;
+    bottom: 0;
+}
+
+.carDashboard{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 25vw;
+}
+
+.carWheel{
+    margin: 0;
+    padding: 0;
+    width: 25vw;
+    height: 25vw;
+    left: 10vw;
+    bottom: -8vw;
+
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.rotateToLeft {
+    animation: rotateToLeft 2s ease-out normal forwards;
+    animation-play-state: paused;
+}
+.rotateToRight{
+    animation: rotateToRight 2s ease-out normal forwards;
+    animation-play-state: paused;
+}
+.rotateFromLeft {
+    animation: rotateBackFromLeft 1s ease-out normal forwards;
+    animation-play-state: paused;
+}
+.rotateFromRight{
+    animation: rotateBackFromRight 1s ease-out normal forwards;
+    animation-play-state: paused;
+}
+.backTo{
+    transition: 2s rotate(0deg) ease-out;
+}
+
+
+@keyframes rotateToLeft {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-60deg);
+    }
+}
+@keyframes rotateBackFromLeft {
+    from {
+        transform: rotate(-60deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes rotateToRight {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(60deg);
+    }
+}
+@keyframes rotateBackFromRight {
+    from {
+        transform: rotate(60deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
