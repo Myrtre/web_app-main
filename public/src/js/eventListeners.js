@@ -43,6 +43,11 @@ window.addEventListener('keydown', (event) => {
             keys.a.pressed = true;
             start('-');
             break;
+
+
+        case 'Escape':
+            togglePause();
+            break;
     }
 });
 

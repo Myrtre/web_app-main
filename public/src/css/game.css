@@ -1,0 +1,46 @@
+#stage {
+    position: relative;
+}
+
+canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+     
+    position: absolute;
+    border-radius: 5%;
+}
+
+#game_screen{
+    z-index: 1;
+}
+
+#startScreen{
+    left: 0;
+    top: 0;
+    background: fixed rgba(0,0,0,0.8);
+    position: absolute;
+    color: whitesmoke;
+    z-index: 3;
+}
+#gameOver{
+    left: 0;
+    top: 0;
+    background: fixed rgba(0,0,0,0.8);
+    position: absolute;
+    color: whitesmoke;
+    z-index: 3;
+}
+
+#footer{
+    z-index: 2;
+}
+
+.sexyButton{
+    height: 10vh;
+    width: 15vw;
+    font-size: 20pt;
+    color: whitesmoke;
+    font-weight: bold;
+    font-family: sans-serif;
+}
